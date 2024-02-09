@@ -1,0 +1,378 @@
+/* seletor{
+    propriedade: valor;
+} */
+
+
+/*cria a variavel para usar durante o projeto*/
+:root{
+    --brand: #B91F33;
+    --primariy: #101417;
+    --contrast: #E0E34C;
+    --gray-light: #E1E1E1;
+    --gray-medium: #666666;
+    --white: #FFFFFF;
+    --rounded: 3px;
+    --section-space: 100px;
+    --fundo: #2E2E2E;
+
+
+
+}
+/* 
+ctrl + f para prcurar palavras */
+
+/* seletor all/todos */
+*{
+    font-family: 'teko', sans-serif;
+    text-transform: uppercase; /*aplica maiúsculo aos textos*/
+
+}
+
+html {
+    /* faz com que a navegação fique suave */
+    scroll-behavior: smooth;
+}
+
+/* para formatar id usa o #. 
+esse scroll é para descontar o position do menu */
+#academia{
+    scroll-margin-top: 150px;
+}
+
+#planos{
+    scroll-margin-top: 100px;
+}
+
+#contato{
+    scroll-margin-top: 130px;
+}
+
+body{
+    margin: 0;
+    background-color: var(--fundo);
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+h2{
+    color: var(--white);
+    font-size: 40px;
+    line-height: 85%;
+}
+
+p{
+    font-size: 18px;
+    line-height: 120%;
+    color: var(--gray-light);
+}
+
+a{
+    text-decoration: none;/*retira a linha de todos os links*/
+}
+
+img{
+    /*a imagem se comporta como elemento em linha. Esse display tira o espaço q todo elemento em linha tem em volta dele*/
+    display: block;
+}
+
+/***********Utilitários***********/
+
+.btn{
+    background-color: var(--brand);
+    color: var(--gray-light);
+    padding: 11px 60px 9px 60px; /*top right bottom left*/
+    font-size: 18px;
+    border-radius: var(--rounded);
+    display: inline-block; /* o elemento de link tem comportamento de linha, n de bloco. Usar esse display pro link poder ser formatado como bottom */
+    transition: 0.2s;
+    border: 2px transparent solid;
+    cursor: pointer;
+    /* cursor: url(../img/cursor.png) 14 14, pointer; */
+}
+
+.btn:hover{
+    transform: scale(0.95);
+}
+
+
+.btn-outline{
+    background-color: transparent;
+    border: solid 2px var(--brand);
+    
+}
+
+
+.container{
+    width: 1140px; /*propriedade de largura*/
+    height: auto; /*altura*/
+    
+    margin-left: auto;
+    margin-right: auto;
+    /*as duas margens auto pra centralizar o container*/
+}
+
+/********** fecha utilitários***********/
+
+.header{
+    background-color: var(--primariy);
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    /*posição fixa APÓS começar a rolar a página. Tem q ter o top 0 junto*/
+    position: sticky;
+    top: 0;
+    z-index: 10; /*faz com que o elemento posicionado fique X camadas a frente*/
+}
+
+/*formatando o container do header*/
+.header .container{
+    display: flex; /*ativa o display flex*/
+    justify-content: space-between; /*alinhamento no eixo x (horizontal)*/
+    align-items: center; /*alinhamento no eixo y (vertial)*/
+}
+
+/*formatando todos os links do menu*/
+.menu a{
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 700; /*peso/negrito da fonte*/
+    margin-left: 111px;
+}
+
+/*ao passar o mouser no menu*/
+.menu a:hover{
+    color: var(--brand);
+}
+
+.hero-section{
+    background-image: url(../img/background.jpg); /* ../ pra poder puxar a pasta img, e usar o url antes*/
+    background-size: cover; /*faz com que a imagem cubra toda a div*/
+    height: calc(100vh - 100px); /*view height -> unidade referente a altura do navegador, menos - o tamanho do heaer*/
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section h1{
+    color: var(--gray-light);
+    font-size: 96px;
+    line-height: 90%;
+}
+
+.hero-section p{
+    color: var(--gray-light);
+    font-size: 24px;
+}
+
+/* .hero-section .container{
+    background-color: blue;
+} */
+
+
+
+
+
+.nossa-academia{
+    margin-top: var(--section-space);
+    margin-bottom: var(--section-space);
+    display: flex;
+    align-items: center;
+    column-gap: 24px;/*espaçamento em coluna entre os filhos do flex/flex itens*/
+}
+
+
+/* .content-academia{
+    flex-direction: column; */
+    
+    
+    /* align-items: center; */
+    /* text-align: center;
+} */
+
+/* .nossa-academia img{
+    width: 558px;
+}
+  */
+
+.faca-parte{
+    background-color: var(--gray-light);
+    
+}
+
+.faca-parte .content{
+    width: 850px;
+    padding: 37px 0; /*primeiro valor é o eixo y, o outro, eixo x*/
+}
+
+.faca-parte h2{
+    color: var(--primariy);
+}
+
+.faca-parte p{
+    color: var(--gray-medium);
+}
+
+.faca-parte .container{
+    /*Posição para servir de referência ao absolute da imagem*/
+    position: relative;
+}
+
+/*Posição da imagem em relação ao elemento pai (desde que ele também tenha position,
+ caso contráeio em relação ao body)*/
+.faca-parte .image{
+    position: absolute;
+    bottom: 0;
+    right:0;
+}
+
+.planos{
+    margin-top: var(--section-space);
+    margin-bottom: var(--section-space);
+    text-align: center;
+}
+
+.flex-cards{
+    display: flex;
+    column-gap: 24px;
+}
+
+.card{
+    /* border-width: 1px;
+    border-style: solid;
+    border-color: var(--gray-light); */
+    border: 1px solid var(--gray-light);
+    border-radius: var(--rounded);
+    padding: 30px;
+    /* -ms-text-combine-horizontal: ; */
+    
+}
+
+.card h3{
+    color: var(--white);
+    font-size: 32px;
+}
+
+.card ul{
+    color: var(--gray-light);
+    text-align: left;
+    font-size: 18px;
+    line-height: 120%;
+    list-style-position: inside; /*posição a partir do marcador ds linha (a bolinha)*/
+    padding: 0;
+}
+
+.card .btn{
+    display: block;
+}
+
+.card-destaque{
+    border-color: var(--contrast);
+    position: relative;
+}
+
+@keyframes rotate {
+
+    0%{
+        transform: rotate(0);
+    }
+
+    25%{
+        background-color: aqua;
+        color: #666666;
+    }
+
+    50%{
+        background-color: palevioletred;
+        color: #B91F33;
+    }
+
+    75%{
+        background-color: red;
+        color: black;
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+.selo{
+    animation: rotate 10s infinite linear;
+    width: 70px;
+    height: 70px;
+    background-color: var(--contrast);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    line-height: 90%;
+    position: absolute;
+    top: -15px;
+    right: -10px;
+}
+
+/* .selo span{
+    transform: rotate(18deg);
+
+    funciona mesmo para entortar o texto
+} */
+
+.card-destaque .price{
+    color: var(--contrast);
+}
+
+
+.price{
+    color: var(--white);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.fale-conosco{
+    display: flex;
+    column-gap: 24px;
+}
+
+.fale-conosco input, .fale-conosco textarea{
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: solid 1px var(--gray-light);
+    border-radius: var(--rounded);
+    padding: 10px;
+    box-sizing: border-box; /*faz com que o padding e borda não aumente as dimensões*/
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: var(--gray-light);
+}
+
+.fale-conosco textarea{
+    height: 140px;
+}
+
+.fale-conosco ::placeholder{
+    color: var(--gray-medium);
+}
+
+.footer{
+    background-color: var(--brand);
+    text-align: center;
+    padding: 14px 194px; /* vertical (top/bottom) horizontal (left/right) */
+    margin-top: var(--section-space);
+    margin-bottom: 30px;
+
+}
+
+.footer p{
+    margin: 0;
+}
+
+.social{
+    display: flex;
+    justify-content: center; /*: trabalha na horizontal*/ /*align-items: na vertical;*/
+    column-gap: 10px;
+    margin-bottom: var(--section-space);
+}
