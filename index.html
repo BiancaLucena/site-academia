@@ -14,6 +14,9 @@
     <!-- font das letras estraída do google -->
 
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- link do css do swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" >
 
     <link rel="stylesheet" href="css/style.css">
     <!-- ligação entre html e css -->
@@ -23,9 +26,29 @@
 
 <body id="inicio">
 
+    <div class="bg-popup">
+
+        <div data-aos="flip-left">
+            
+            <div class="popup">
+                <span class="close-popup">x</span>
+                <a href="#"> <img src="img/popup.png" alt=""> </a>
+            </div>
+            
+        </div>
+
+    </div>
+
     <header class="header">
         <div class="container">
             <img src="img/logo.svg" alt="Descrição da imagem">
+
+            <div class="btn-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
 
             <nav class="menu">
                 <a href="#inicio">Início</a>
@@ -37,25 +60,66 @@
     </header>
 
     <!-- para ser section tem que ter h1-h6 -->
-    <section class="hero-section">
-        <div class="container">
-            <h1>O melhor crossfit da cidade está aqui!</h1>
+    <!-- codigos do swiper para rodar a herosection -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
 
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, molestiae rerum sed odio dolores
-                aspernatur obcaecati vitae deserunt, rem minus numquam nesciunt. Doloribus libero fugiat autem officia
-                dolorem quae aliquid eveniet eos earum ullam temporibus id qui delectus atque dolore molestiae corrupti
-                porro vel ratione, rem, provident exercitationem nostrum aut!</p> <!--alt z-->
+            <section class="hero-section swiper-slide">
+                <div class="container">
+                    <h1>O melhor crossfit da cidade está aqui!</h1>
 
-            <a class="btn" href="https://www.cotiinformatica.com.br/" target="_blank">lorem ipsum</a>
-            <!-- target blank para o link direcionar para uma nova janela, sem ser no site -->
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, molestiae rerum sed odio dolores
+                        aspernatur obcaecati vitae deserunt, rem minus numquam nesciunt. Doloribus libero fugiat autem officia
+                        dolorem quae aliquid eveniet eos earum ullam temporibus id qui delectus atque dolore molestiae corrupti
+                        porro vel ratione, rem, provident exercitationem nostrum aut!</p> <!--alt z-->
+
+                    <a class="btn" href="https://www.cotiinformatica.com.br/" target="_blank">lorem ipsum</a>
+                    <!-- target blank para o link direcionar para uma nova janela, sem ser no site -->
+                </div>
+            </section>
+
+            <section class="hero-section bg-2 swiper-slide">
+                <div class="container">
+                    <h1>O melhor crossfit da cidade está aqui!</h1>
+
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, molestiae rerum sed odio dolores
+                        aspernatur obcaecati vitae deserunt, rem minus numquam nesciunt. Doloribus libero fugiat autem officia
+                        dolorem quae aliquid eveniet eos earum ullam temporibus id qui delectus atque dolore molestiae corrupti
+                        porro vel ratione, rem, provident exercitationem nostrum aut!</p> <!--alt z-->
+
+                    <a class="btn" href="https://www.cotiinformatica.com.br/" target="_blank">lorem ipsum</a>
+                    <!-- target blank para o link direcionar para uma nova janela, sem ser no site -->
+                </div>
+            </section>
+
+            <section class="hero-section bg-3 swiper-slide">
+                <div class="container">
+                    <h1>O melhor crossfit da cidade está aqui!</h1>
+
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, molestiae rerum sed odio dolores
+                        aspernatur obcaecati vitae deserunt, rem minus numquam nesciunt. Doloribus libero fugiat autem officia
+                        dolorem quae aliquid eveniet eos earum ullam temporibus id qui delectus atque dolore molestiae corrupti
+                        porro vel ratione, rem, provident exercitationem nostrum aut!</p> <!--alt z-->
+
+                    <a class="btn" href="https://www.cotiinformatica.com.br/" target="_blank">lorem ipsum</a>
+                    <!-- target blank para o link direcionar para uma nova janela, sem ser no site -->
+                </div>
+            </section>
+
         </div>
-    </section>
+        
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+
+
 
     <section class="container nossa-academia" id="academia">
 
-        <img src="img/aluna.jpg" alt="">
+        <img src="img/aluna.jpg "  data-aos="fade-right" data-aos-duration="1000" alt="">
 
-        <div class="content-academia">
+        <div class="content-academia" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
             <h2>Nossa Academia</h2>
 
             <p>Na HardCore CrossFit, não estamos aqui apenas para transformar corpos; estamos aqui para transformar
@@ -96,7 +160,7 @@
             mais forte, mais resistente e mais HardCore do que nunca. Você está pronto para desafiar seus limites?
 
         <div class="flex-cards">
-            <section class="card">
+            <section class="card" data-aos="fade-up" data-aos-duration="1500">
                 <h3>Plano Mensal</h3>
                 <p>Ideal para você que está iniciando e ainda não descobriu o poder do crossfit</p>
 
@@ -114,7 +178,7 @@
 
             </section>
 
-            <section class="card card-destaque">
+            <section class="card card-destaque" data-aos="fade-down" data-aos-duration="1100">
 
                 <div class="selo">
                     <span>Mais escolhido</span>
@@ -139,7 +203,7 @@
                 <a href="#" class="btn">Contratar plano</a>
             </section>
 
-            <section class="card">
+            <section class="card" data-aos="fade-up" data-aos-duration="1500">
                 <h3>Plano Semestral</h3>
                 <p>Plano para quem já entendeu que o crossfit tem o poder de mudar sua vida</p>
 
@@ -206,6 +270,47 @@
         </div>
 
     </footer>
+
+
+    
+    
+    <!-- ligação entre html e java script -->
+    <script src="js/script.js"></script>
+
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+
+
+
+
+    <!-- script do swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+
+        loop : true,
+
+        effect : 'coverflow', //'fade', cube
+        speed : 1000,
+
+
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        autoplay : {
+            delay : 4000,
+            pauseOnMouseEnter : true,
+        }
+
+      });
+    </script>
 
 
 </body>

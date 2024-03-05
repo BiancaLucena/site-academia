@@ -15,6 +15,8 @@
     --section-space: 100px;
     --fundo: #2E2E2E;
 
+    /* variavél da seta do slide que já veio pronto da biblioteca swiper, alterei ela =) */
+    --swiper-navigation-color: var(--brand);
 
 
 }
@@ -50,6 +52,7 @@ esse scroll é para descontar o position do menu */
 body{
     margin: 0;
     background-color: var(--fundo);
+    overflow-x: hidden; /*esconde o conteúdo que ultrapassa a largura do body, (nesse caso era o selo, criando barra de rolagem no responsivo )*/
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -105,15 +108,53 @@ img{
 
 
 .container{
-    width: 1140px; /*propriedade de largura*/
+    max-width: 1140px; /*propriedade de largura*/
     height: auto; /*altura*/
     
     margin-left: auto;
     margin-right: auto;
     /*as duas margens auto pra centralizar o container*/
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /********** fecha utilitários***********/
+
+
+
+
+.bg-popup{
+    width: 100%;
+    height: 100vh;
+    background-color: #10141771;
+    position: fixed;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-popup-none{
+    display: none;
+}
+
+
+.popup{
+    position: relative; /*para o x ficar relativo ao popup*/
+    
+}
+
+/* //close */
+.close-popup{
+    color: red;
+    position: absolute;
+    right: 35px;
+    top: -30px;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
 
 .header{
     background-color: var(--primariy);
@@ -153,6 +194,15 @@ img{
     display: flex;
     align-items: center;
     text-align: center;
+}
+
+
+.bg-2{
+    background-image: url(../img/background-2.jpg); /* ../ pra poder puxar a pasta img, e usar o url antes*/
+}
+
+.bg-3{
+    background-image: url(../img/background-3.jpg); /* ../ pra poder puxar a pasta img, e usar o url antes*/
 }
 
 .hero-section h1{
@@ -202,7 +252,8 @@ img{
 }
 
 .faca-parte .content{
-    width: 850px;
+    width: calc(100% - 200px);/*para ajustar o texto no responsivo*/
+    max-width: 850px;
     padding: 37px 0; /*primeiro valor é o eixo y, o outro, eixo x*/
 }
 
@@ -375,4 +426,155 @@ img{
     justify-content: center; /*: trabalha na horizontal*/ /*align-items: na vertical;*/
     column-gap: 10px;
     margin-bottom: var(--section-space);
+}
+
+
+/*Para telas de máximo 1279px*/
+@media (max-width: 1279px){
+
+    h2{
+        font-size: 32px;
+    }
+
+    .card h3{
+        font-size: 24px;
+    }
+
+    .menu{
+        /* display: none; */
+        /* background-color: var(--brand); */
+        /* background-image: linear-gradient(var(--primariy), (var--fundo)); */
+        background-image: linear-gradient(var(--primariy), var(--fundo));
+        width: 100%;
+        height: calc(100vh - 100px);
+        /* height: 420px; */
+        position: absolute;
+        right: 0;
+        top: 100px;
+
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: 0.5s;
+        
+    }
+
+
+    /* classe que será inserida no js para mostrar o menu aberto */
+    .menu-open{
+        transform: translateX(0);
+    }
+
+    
+
+    .menu a{
+        margin: 0; /* tirando a margem dada no começo */
+        padding: 25px 15px;
+        border-bottom: 1px solid black;
+
+    }
+
+    .menu a:active{
+        background-color: var(--brand);
+        color: var(--white);
+    }
+
+    .bar{
+        width: 40px;
+        height: 3px;
+        background-color: var(--white);
+        margin-bottom: 3px;
+        transition: 0.3s;
+    }
+
+    /* x é classe adicionada pelo js */
+    .x .bar:first-child{
+        background-color: red;
+        transform: rotate(45deg) translate(5px, 5px);
+        transition-delay: 0.2s;
+    }
+
+    .x .bar:last-child{
+        background-color: red;
+        transform: rotate(-45deg) translate(3px, -3px);
+        transition-delay: 0.3s;
+
+    }
+
+    .x .bar:nth-child(2){
+        opacity: 0;
+        transform:translateX(-150px) ;
+    }
+
+    .hero-section{
+        /* height: auto;
+        padding-top: 94px;
+        padding-bottom: 94px; */
+        height: 420px;
+        background-position: top center;
+    }
+
+    .hero-section h1{
+        font-size: 36px;
+    }
+
+    .hero-section p{
+        font-size: 18px;
+        
+    }
+
+}
+
+@media (max-width: 1023px){
+    .nossa-academia{
+        flex-direction: column;
+        row-gap: 40px;
+
+    }
+    
+    .nossa-academia img{
+        width: 100%;
+    }
+
+    .flex-cards{
+        /*quando o direction estiver em coluna, justify-content e align-itens trocam/invertem o alinhamento*/
+        flex-direction: column;
+        row-gap: 30px;
+        align-items: center;
+        
+    }
+
+    .card{
+        max-width: 450px;
+    }
+
+    .fale-conosco{
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .fale-conosco iframe{
+        width: 100%;
+    }
+
+    .footer{
+        padding: 14px;
+    }
+}
+
+@media (max-width: 650px){
+
+    .faca-parte .content{
+        width: 100%;
+    }
+
+    .faca-parte .image{
+        display: none;
+    }
+
+    .popup img{
+        width: 320px;
+    }
+
+
 }
